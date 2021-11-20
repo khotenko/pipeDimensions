@@ -1,0 +1,1478 @@
+[
+ {
+   "Name": "1/2  21.3 mm",
+   "WT_inch": 0.065,
+   "WT_mm": 1.65,
+   "lb_per_ft": 0.5,
+   "kg_per_m": 0.8,
+   "Sch_1": "5",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "1/2  21.3 mm",
+   "WT_inch": 0.083,
+   "WT_mm": 2.11,
+   "lb_per_ft": 0.7,
+   "kg_per_m": 1,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "1/2  21.3 mm",
+   "WT_inch": 0.109,
+   "WT_mm": 2.77,
+   "lb_per_ft": 0.9,
+   "kg_per_m": 1.3,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "1/2  21.3 mm",
+   "WT_inch": 0.147,
+   "WT_mm": 3.73,
+   "lb_per_ft": 1.1,
+   "kg_per_m": 1.6,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "1/2  21.3 mm",
+   "WT_inch": 0.188,
+   "WT_mm": 4.78,
+   "lb_per_ft": 1.3,
+   "kg_per_m": 2,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "1/2  21.3 mm",
+   "WT_inch": 0.294,
+   "WT_mm": 7.47,
+   "lb_per_ft": 1.7,
+   "kg_per_m": 2.6,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "3/4  26.7 mm",
+   "WT_inch": 0.065,
+   "WT_mm": 1.65,
+   "lb_per_ft": 0.7,
+   "kg_per_m": 1,
+   "Sch_1": "5",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "3/4  26.7 mm",
+   "WT_inch": 0.083,
+   "WT_mm": 2.11,
+   "lb_per_ft": 0.9,
+   "kg_per_m": 1.3,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "3/4  26.7 mm",
+   "WT_inch": 0.113,
+   "WT_mm": 2.87,
+   "lb_per_ft": 1.1,
+   "kg_per_m": 1.7,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "3/4  26.7 mm",
+   "WT_inch": 0.154,
+   "WT_mm": 3.91,
+   "lb_per_ft": 1.5,
+   "kg_per_m": 2.2,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "3/4  26.7 mm",
+   "WT_inch": 0.219,
+   "WT_mm": 5.56,
+   "lb_per_ft": 2,
+   "kg_per_m": 2.9,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "3/4  26.7 mm",
+   "WT_inch": 0.308,
+   "WT_mm": 7.82,
+   "lb_per_ft": 2.4,
+   "kg_per_m": 3.6,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "1  33.3 mm",
+   "WT_inch": 0.065,
+   "WT_mm": 1.65,
+   "lb_per_ft": 0.9,
+   "kg_per_m": 1.3,
+   "Sch_1": "5",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "1  33.3 mm",
+   "WT_inch": 0.109,
+   "WT_mm": 2.77,
+   "lb_per_ft": 1.4,
+   "kg_per_m": 2.1,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "1  33.3 mm",
+   "WT_inch": 0.133,
+   "WT_mm": 3.38,
+   "lb_per_ft": 1.7,
+   "kg_per_m": 2.5,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "1  33.3 mm",
+   "WT_inch": 0.179,
+   "WT_mm": 4.55,
+   "lb_per_ft": 2.2,
+   "kg_per_m": 3.2,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "1  33.3 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 2.9,
+   "kg_per_m": 4.2,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "1  33.3 mm",
+   "WT_inch": 0.358,
+   "WT_mm": 9.09,
+   "lb_per_ft": 3.7,
+   "kg_per_m": 5.5,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "1-1/4  42.2 mm",
+   "WT_inch": 0.065,
+   "WT_mm": 1.65,
+   "lb_per_ft": 1.1,
+   "kg_per_m": 1.7,
+   "Sch_1": "5",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "1-1/4  42.2 mm",
+   "WT_inch": 0.109,
+   "WT_mm": 2.77,
+   "lb_per_ft": 1.8,
+   "kg_per_m": 2.7,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "1-1/4  42.2 mm",
+   "WT_inch": 0.14,
+   "WT_mm": 3.56,
+   "lb_per_ft": 2.3,
+   "kg_per_m": 3.4,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "1-1/4  42.2 mm",
+   "WT_inch": 0.191,
+   "WT_mm": 4.85,
+   "lb_per_ft": 3,
+   "kg_per_m": 4.5,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "1-1/4  42.2 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 3.8,
+   "kg_per_m": 5.6,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "1-1/4  42.2 mm",
+   "WT_inch": 0.382,
+   "WT_mm": 9.7,
+   "lb_per_ft": 5.2,
+   "kg_per_m": 7.8,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "1-1/2  48.3 mm",
+   "WT_inch": 0.065,
+   "WT_mm": 1.65,
+   "lb_per_ft": 1.3,
+   "kg_per_m": 1.9,
+   "Sch_1": "5",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "1-1/2  48.3 mm",
+   "WT_inch": 0.109,
+   "WT_mm": 2.77,
+   "lb_per_ft": 2.1,
+   "kg_per_m": 3.1,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "1-1/2  48.3 mm",
+   "WT_inch": 0.145,
+   "WT_mm": 3.68,
+   "lb_per_ft": 2.7,
+   "kg_per_m": 4.1,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "1-1/2  48.3 mm",
+   "WT_inch": 0.2,
+   "WT_mm": 5.08,
+   "lb_per_ft": 3.6,
+   "kg_per_m": 5.4,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "1-1/2  48.3 mm",
+   "WT_inch": 0.281,
+   "WT_mm": 7.14,
+   "lb_per_ft": 4.9,
+   "kg_per_m": 7.3,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "1-1/2  48.3 mm",
+   "WT_inch": 0.4,
+   "WT_mm": 10.15,
+   "lb_per_ft": 6.4,
+   "kg_per_m": 9.6,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "2  60.3 mm",
+   "WT_inch": 0.065,
+   "WT_mm": 1.65,
+   "lb_per_ft": 1.6,
+   "kg_per_m": 2.4,
+   "Sch_1": "5",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "2  60.3 mm",
+   "WT_inch": 0.109,
+   "WT_mm": 2.77,
+   "lb_per_ft": 2.6,
+   "kg_per_m": 3.9,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "2  60.3 mm",
+   "WT_inch": 0.154,
+   "WT_mm": 3.91,
+   "lb_per_ft": 3.7,
+   "kg_per_m": 5.4,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "2  60.3 mm",
+   "WT_inch": 0.218,
+   "WT_mm": 5.54,
+   "lb_per_ft": 5,
+   "kg_per_m": 7.5,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "2  60.3 mm",
+   "WT_inch": 0.344,
+   "WT_mm": 8.74,
+   "lb_per_ft": 7.5,
+   "kg_per_m": 11.1,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "2  60.3 mm",
+   "WT_inch": 0.436,
+   "WT_mm": 11.07,
+   "lb_per_ft": 9,
+   "kg_per_m": 13.4,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "3  88.9 mm",
+   "WT_inch": 0.083,
+   "WT_mm": 2.11,
+   "lb_per_ft": 3,
+   "kg_per_m": 4.5,
+   "Sch_1": "5",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "3  88.9 mm",
+   "WT_inch": 0.12,
+   "WT_mm": 3.05,
+   "lb_per_ft": 4.3,
+   "kg_per_m": 6.5,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "3  88.9 mm",
+   "WT_inch": 0.216,
+   "WT_mm": 5.49,
+   "lb_per_ft": 7.6,
+   "kg_per_m": 11.3,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "3  88.9 mm",
+   "WT_inch": 0.3,
+   "WT_mm": 7.62,
+   "lb_per_ft": 10.3,
+   "kg_per_m": 15.3,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "3  88.9 mm",
+   "WT_inch": 0.438,
+   "WT_mm": 11.13,
+   "lb_per_ft": 14.3,
+   "kg_per_m": 21.4,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "3  88.9 mm",
+   "WT_inch": 0.6,
+   "WT_mm": 15.24,
+   "lb_per_ft": 18.6,
+   "kg_per_m": 27.7,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "4  114.3 mm",
+   "WT_inch": 0.083,
+   "WT_mm": 2.11,
+   "lb_per_ft": 3.9,
+   "kg_per_m": 5.8,
+   "Sch_1": "5",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "4  114.3 mm",
+   "WT_inch": 0.12,
+   "WT_mm": 3.05,
+   "lb_per_ft": 5.6,
+   "kg_per_m": 8.4,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "4  114.3 mm",
+   "WT_inch": 0.156,
+   "WT_mm": 3.96,
+   "lb_per_ft": 7.2,
+   "kg_per_m": 10.8,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "4  114.3 mm",
+   "WT_inch": 0.188,
+   "WT_mm": 4.78,
+   "lb_per_ft": 8.7,
+   "kg_per_m": 12.9,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "4  114.3 mm",
+   "WT_inch": 0.237,
+   "WT_mm": 6.02,
+   "lb_per_ft": 10.8,
+   "kg_per_m": 16.1,
+   "Sch_1": "120",
+   "Sch_2": ""
+ },
+ {
+   "Name": "4  114.3 mm",
+   "WT_inch": 0.337,
+   "WT_mm": 8.56,
+   "lb_per_ft": 15,
+   "kg_per_m": 22.3,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "4  114.3 mm",
+   "WT_inch": 0.438,
+   "WT_mm": 11.13,
+   "lb_per_ft": 19,
+   "kg_per_m": 28.3,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "4  114.3 mm",
+   "WT_inch": 0.531,
+   "WT_mm": 13.49,
+   "lb_per_ft": 22.5,
+   "kg_per_m": 33.5,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "4  114.3 mm",
+   "WT_inch": 0.674,
+   "WT_mm": 17.12,
+   "lb_per_ft": 27.6,
+   "kg_per_m": 41,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "6  168.3 mm",
+   "WT_inch": 0.109,
+   "WT_mm": 2.77,
+   "lb_per_ft": 7.6,
+   "kg_per_m": 11.3,
+   "Sch_1": "5",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "6  168.3 mm",
+   "WT_inch": 0.134,
+   "WT_mm": 3.4,
+   "lb_per_ft": 9.3,
+   "kg_per_m": 13.8,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "6  168.3 mm",
+   "WT_inch": 0.188,
+   "WT_mm": 4.78,
+   "lb_per_ft": 12.9,
+   "kg_per_m": 19.3,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "6  168.3 mm",
+   "WT_inch": 0.28,
+   "WT_mm": 7.11,
+   "lb_per_ft": 19,
+   "kg_per_m": 28.3,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "6  168.3 mm",
+   "WT_inch": 0.432,
+   "WT_mm": 10.97,
+   "lb_per_ft": 28.6,
+   "kg_per_m": 42.6,
+   "Sch_1": "120",
+   "Sch_2": ""
+ },
+ {
+   "Name": "6  168.3 mm",
+   "WT_inch": 0.562,
+   "WT_mm": 14.27,
+   "lb_per_ft": 36.4,
+   "kg_per_m": 54.2,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "6  168.3 mm",
+   "WT_inch": 0.719,
+   "WT_mm": 18.26,
+   "lb_per_ft": 45.4,
+   "kg_per_m": 67.6,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "6  168.3 mm",
+   "WT_inch": 0.864,
+   "WT_mm": 21.95,
+   "lb_per_ft": 53.2,
+   "kg_per_m": 79.2,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.109,
+   "WT_mm": 2.77,
+   "lb_per_ft": 9.9,
+   "kg_per_m": 14.8,
+   "Sch_1": "",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.148,
+   "WT_mm": 3.76,
+   "lb_per_ft": 13.4,
+   "kg_per_m": 20,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 22.4,
+   "kg_per_m": 33.3,
+   "Sch_1": "20",
+   "Sch_2": ""
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.277,
+   "WT_mm": 7.04,
+   "lb_per_ft": 24.7,
+   "kg_per_m": 36.8,
+   "Sch_1": "30",
+   "Sch_2": ""
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.322,
+   "WT_mm": 8.18,
+   "lb_per_ft": 28.6,
+   "kg_per_m": 42.6,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.406,
+   "WT_mm": 10.31,
+   "lb_per_ft": 35.7,
+   "kg_per_m": 53.1,
+   "Sch_1": "60",
+   "Sch_2": ""
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 43.4,
+   "kg_per_m": 64.6,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.594,
+   "WT_mm": 15.09,
+   "lb_per_ft": 51,
+   "kg_per_m": 75.9,
+   "Sch_1": "100",
+   "Sch_2": ""
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.719,
+   "WT_mm": 18.26,
+   "lb_per_ft": 60.8,
+   "kg_per_m": 90.4,
+   "Sch_1": "120",
+   "Sch_2": ""
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.812,
+   "WT_mm": 20.62,
+   "lb_per_ft": 67.8,
+   "kg_per_m": 100.9,
+   "Sch_1": "140",
+   "Sch_2": ""
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.875,
+   "WT_mm": 22.23,
+   "lb_per_ft": 72.5,
+   "kg_per_m": 107.9,
+   "Sch_1": "XXS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "8  219.1 mm",
+   "WT_inch": 0.906,
+   "WT_mm": 23.01,
+   "lb_per_ft": 74.8,
+   "kg_per_m": 111.3,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.134,
+   "WT_mm": 3.4,
+   "lb_per_ft": 15.2,
+   "kg_per_m": 22.6,
+   "Sch_1": "",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.165,
+   "WT_mm": 4.19,
+   "lb_per_ft": 18.7,
+   "kg_per_m": 27.8,
+   "Sch_1": "",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.188,
+   "WT_mm": 4.78,
+   "lb_per_ft": 21.2,
+   "kg_per_m": 31.6,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 28.1,
+   "kg_per_m": 41.8,
+   "Sch_1": "20",
+   "Sch_2": ""
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.307,
+   "WT_mm": 7.8,
+   "lb_per_ft": 34.3,
+   "kg_per_m": 51,
+   "Sch_1": "30",
+   "Sch_2": ""
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.365,
+   "WT_mm": 9.27,
+   "lb_per_ft": 40.5,
+   "kg_per_m": 60.3,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 54.8,
+   "kg_per_m": 81.5,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.594,
+   "WT_mm": 15.09,
+   "lb_per_ft": 64.5,
+   "kg_per_m": 96,
+   "Sch_1": "80",
+   "Sch_2": ""
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.719,
+   "WT_mm": 18.26,
+   "lb_per_ft": 77.1,
+   "kg_per_m": 114.7,
+   "Sch_1": "100",
+   "Sch_2": ""
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 0.844,
+   "WT_mm": 21.44,
+   "lb_per_ft": 89.4,
+   "kg_per_m": 133,
+   "Sch_1": "120",
+   "Sch_2": ""
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 1,
+   "WT_mm": 25.4,
+   "lb_per_ft": 104.2,
+   "kg_per_m": 155.1,
+   "Sch_1": "140",
+   "Sch_2": "XXS"
+ },
+ {
+   "Name": "10  273.0 mm",
+   "WT_inch": 1.125,
+   "WT_mm": 28.58,
+   "lb_per_ft": 115.8,
+   "kg_per_m": 172.3,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.156,
+   "WT_mm": 3.96,
+   "lb_per_ft": 21,
+   "kg_per_m": 31.2,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.18,
+   "WT_mm": 4.57,
+   "lb_per_ft": 24.2,
+   "kg_per_m": 36,
+   "Sch_1": "",
+   "Sch_2": "5S"
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.188,
+   "WT_mm": 4.78,
+   "lb_per_ft": 25.3,
+   "kg_per_m": 37.6,
+   "Sch_1": "",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 33.4,
+   "kg_per_m": 49.7,
+   "Sch_1": "20",
+   "Sch_2": ""
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.33,
+   "WT_mm": 8.38,
+   "lb_per_ft": 43.8,
+   "kg_per_m": 65.2,
+   "Sch_1": "30",
+   "Sch_2": ""
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.375,
+   "WT_mm": 9.53,
+   "lb_per_ft": 49.6,
+   "kg_per_m": 73.9,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.406,
+   "WT_mm": 10.31,
+   "lb_per_ft": 53.6,
+   "kg_per_m": 79.7,
+   "Sch_1": "40",
+   "Sch_2": ""
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 65.5,
+   "kg_per_m": 97.4,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.562,
+   "WT_mm": 14.27,
+   "lb_per_ft": 73.2,
+   "kg_per_m": 108.9,
+   "Sch_1": "60",
+   "Sch_2": ""
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.688,
+   "WT_mm": 17.48,
+   "lb_per_ft": 88.7,
+   "kg_per_m": 132.1,
+   "Sch_1": "80",
+   "Sch_2": ""
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 0.844,
+   "WT_mm": 21.44,
+   "lb_per_ft": 107.4,
+   "kg_per_m": 159.9,
+   "Sch_1": "100",
+   "Sch_2": ""
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 1,
+   "WT_mm": 25.4,
+   "lb_per_ft": 125.6,
+   "kg_per_m": 186.9,
+   "Sch_1": "120",
+   "Sch_2": "XXS"
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 1.125,
+   "WT_mm": 28.58,
+   "lb_per_ft": 139.8,
+   "kg_per_m": 208.1,
+   "Sch_1": "140",
+   "Sch_2": ""
+ },
+ {
+   "Name": "12  323.9 mm",
+   "WT_inch": 1.312,
+   "WT_mm": 33.32,
+   "lb_per_ft": 160.4,
+   "kg_per_m": 238.7,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 0.188,
+   "WT_mm": 4.78,
+   "lb_per_ft": 31.8,
+   "kg_per_m": 47.3,
+   "Sch_1": "",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 42.1,
+   "kg_per_m": 62.7,
+   "Sch_1": "10",
+   "Sch_2": ""
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 0.312,
+   "WT_mm": 7.92,
+   "lb_per_ft": 52.3,
+   "kg_per_m": 77.8,
+   "Sch_1": "20",
+   "Sch_2": ""
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 0.375,
+   "WT_mm": 9.53,
+   "lb_per_ft": 62.6,
+   "kg_per_m": 93.3,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 82.9,
+   "kg_per_m": 123.3,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 0.656,
+   "WT_mm": 16.66,
+   "lb_per_ft": 107.6,
+   "kg_per_m": 160.1,
+   "Sch_1": "60",
+   "Sch_2": ""
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 0.844,
+   "WT_mm": 21.44,
+   "lb_per_ft": 136.7,
+   "kg_per_m": 203.5,
+   "Sch_1": "80",
+   "Sch_2": ""
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 1.031,
+   "WT_mm": 26.19,
+   "lb_per_ft": 165,
+   "kg_per_m": 245.6,
+   "Sch_1": "100",
+   "Sch_2": ""
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 1.219,
+   "WT_mm": 30.96,
+   "lb_per_ft": 192.6,
+   "kg_per_m": 286.7,
+   "Sch_1": "120",
+   "Sch_2": ""
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 1.438,
+   "WT_mm": 36.53,
+   "lb_per_ft": 223.9,
+   "kg_per_m": 333.2,
+   "Sch_1": "140",
+   "Sch_2": ""
+ },
+ {
+   "Name": "16  406.4 mm",
+   "WT_inch": 1.594,
+   "WT_mm": 40.49,
+   "lb_per_ft": 245.5,
+   "kg_per_m": 365.4,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 0.188,
+   "WT_mm": 4.78,
+   "lb_per_ft": 35.8,
+   "kg_per_m": 53.3,
+   "Sch_1": "",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 47.4,
+   "kg_per_m": 70.6,
+   "Sch_1": "10",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 0.312,
+   "WT_mm": 7.92,
+   "lb_per_ft": 59,
+   "kg_per_m": 87.7,
+   "Sch_1": "20",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 0.375,
+   "WT_mm": 9.53,
+   "lb_per_ft": 70.7,
+   "kg_per_m": 105.2,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 0.438,
+   "WT_mm": 11.13,
+   "lb_per_ft": 82.2,
+   "kg_per_m": 122.4,
+   "Sch_1": "30",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 93.5,
+   "kg_per_m": 139.2,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 0.562,
+   "WT_mm": 14.27,
+   "lb_per_ft": 104.8,
+   "kg_per_m": 155.8,
+   "Sch_1": "40",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 0.75,
+   "WT_mm": 19.05,
+   "lb_per_ft": 138.3,
+   "kg_per_m": 205.8,
+   "Sch_1": "60",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 0.938,
+   "WT_mm": 23.83,
+   "lb_per_ft": 171.1,
+   "kg_per_m": 254.6,
+   "Sch_1": "80",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 1.156,
+   "WT_mm": 29.36,
+   "lb_per_ft": 208.2,
+   "kg_per_m": 309.6,
+   "Sch_1": "100",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 1.375,
+   "WT_mm": 34.93,
+   "lb_per_ft": 244.4,
+   "kg_per_m": 363.6,
+   "Sch_1": "120",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 1.562,
+   "WT_mm": 39.67,
+   "lb_per_ft": 274.5,
+   "kg_per_m": 408.3,
+   "Sch_1": "140",
+   "Sch_2": ""
+ },
+ {
+   "Name": "18  457 mm",
+   "WT_inch": 1.781,
+   "WT_mm": 45.24,
+   "lb_per_ft": 308.8,
+   "kg_per_m": 459.4,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 0.218,
+   "WT_mm": 5.54,
+   "lb_per_ft": 46.1,
+   "kg_per_m": 68.6,
+   "Sch_1": "",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 52.8,
+   "kg_per_m": 78.6,
+   "Sch_1": "10",
+   "Sch_2": ""
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 0.375,
+   "WT_mm": 9.53,
+   "lb_per_ft": 78.7,
+   "kg_per_m": 117.2,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 104.2,
+   "kg_per_m": 155.1,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 0.594,
+   "WT_mm": 15.09,
+   "lb_per_ft": 123.2,
+   "kg_per_m": 183.4,
+   "Sch_1": "40",
+   "Sch_2": ""
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 0.812,
+   "WT_mm": 20.62,
+   "lb_per_ft": 166.6,
+   "kg_per_m": 247.8,
+   "Sch_1": "60",
+   "Sch_2": ""
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 1.031,
+   "WT_mm": 26.19,
+   "lb_per_ft": 209.1,
+   "kg_per_m": 311.2,
+   "Sch_1": "80",
+   "Sch_2": ""
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 1.281,
+   "WT_mm": 32.54,
+   "lb_per_ft": 256.3,
+   "kg_per_m": 381.6,
+   "Sch_1": "100",
+   "Sch_2": ""
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 1.5,
+   "WT_mm": 38.1,
+   "lb_per_ft": 296.7,
+   "kg_per_m": 441.5,
+   "Sch_1": "120",
+   "Sch_2": ""
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 1.75,
+   "WT_mm": 44.45,
+   "lb_per_ft": 341.4,
+   "kg_per_m": 508.2,
+   "Sch_1": "140",
+   "Sch_2": ""
+ },
+ {
+   "Name": "20  508 mm",
+   "WT_inch": 1.969,
+   "WT_mm": 50.01,
+   "lb_per_ft": 379.5,
+   "kg_per_m": 564.9,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 0.218,
+   "WT_mm": 5.54,
+   "lb_per_ft": 50.8,
+   "kg_per_m": 75.6,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 58.1,
+   "kg_per_m": 86.6,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 0.375,
+   "WT_mm": 9.53,
+   "lb_per_ft": 86.7,
+   "kg_per_m": 129.1,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 114.9,
+   "kg_per_m": 171.1,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 0.875,
+   "WT_mm": 22.23,
+   "lb_per_ft": 197.6,
+   "kg_per_m": 294.3,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 1.125,
+   "WT_mm": 28.58,
+   "lb_per_ft": 251.1,
+   "kg_per_m": 373.9,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 1.375,
+   "WT_mm": 34.93,
+   "lb_per_ft": 303.2,
+   "kg_per_m": 451.5,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 1.625,
+   "WT_mm": 41.28,
+   "lb_per_ft": 353.9,
+   "kg_per_m": 527.1,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 1.875,
+   "WT_mm": 47.63,
+   "lb_per_ft": 403.4,
+   "kg_per_m": 600.7,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "22  559 mm",
+   "WT_inch": 2.125,
+   "WT_mm": 53.98,
+   "lb_per_ft": 451.5,
+   "kg_per_m": 672.3,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 0.25,
+   "WT_mm": 6.35,
+   "lb_per_ft": 63.5,
+   "kg_per_m": 94.5,
+   "Sch_1": "10",
+   "Sch_2": "10S"
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 0.375,
+   "WT_mm": 9.53,
+   "lb_per_ft": 94.7,
+   "kg_per_m": 141.1,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 125.6,
+   "kg_per_m": 187.1,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 0.562,
+   "WT_mm": 14.27,
+   "lb_per_ft": 140.8,
+   "kg_per_m": 209.7,
+   "Sch_1": "30",
+   "Sch_2": ""
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 0.688,
+   "WT_mm": 17.48,
+   "lb_per_ft": 171.5,
+   "kg_per_m": 255.4,
+   "Sch_1": "40",
+   "Sch_2": ""
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 0.969,
+   "WT_mm": 24.61,
+   "lb_per_ft": 238.6,
+   "kg_per_m": 355.3,
+   "Sch_1": "60",
+   "Sch_2": ""
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 1.219,
+   "WT_mm": 30.96,
+   "lb_per_ft": 296.9,
+   "kg_per_m": 442.1,
+   "Sch_1": "80",
+   "Sch_2": ""
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 1.531,
+   "WT_mm": 38.89,
+   "lb_per_ft": 367.7,
+   "kg_per_m": 547.7,
+   "Sch_1": "100",
+   "Sch_2": ""
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 1.812,
+   "WT_mm": 46.02,
+   "lb_per_ft": 429.8,
+   "kg_per_m": 640.1,
+   "Sch_1": "120",
+   "Sch_2": ""
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 2.062,
+   "WT_mm": 52.37,
+   "lb_per_ft": 483.6,
+   "kg_per_m": 720.2,
+   "Sch_1": "140",
+   "Sch_2": ""
+ },
+ {
+   "Name": "24  610 mm",
+   "WT_inch": 2.344,
+   "WT_mm": 59.54,
+   "lb_per_ft": 542.6,
+   "kg_per_m": 808.3,
+   "Sch_1": "160",
+   "Sch_2": ""
+ },
+ {
+   "Name": "30  762 mm",
+   "WT_inch": 0.312,
+   "WT_mm": 7.92,
+   "lb_per_ft": 99,
+   "kg_per_m": 147.3,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "30  762 mm",
+   "WT_inch": 0.375,
+   "WT_mm": 9.53,
+   "lb_per_ft": 118.8,
+   "kg_per_m": 176.9,
+   "Sch_1": "STD",
+   "Sch_2": "40S"
+ },
+ {
+   "Name": "30  762 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 157.7,
+   "kg_per_m": 234.7,
+   "Sch_1": "XS",
+   "Sch_2": "80S"
+ },
+ {
+   "Name": "30  762 mm",
+   "WT_inch": 0.625,
+   "WT_mm": 15.88,
+   "lb_per_ft": 196.3,
+   "kg_per_m": 292.2,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "36  914 mm",
+   "WT_inch": 0.312,
+   "WT_mm": 7.92,
+   "lb_per_ft": 119,
+   "kg_per_m": 177,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "36  914 mm",
+   "WT_inch": 0.375,
+   "WT_mm": 9.53,
+   "lb_per_ft": 142.8,
+   "kg_per_m": 212.6,
+   "Sch_1": "STD",
+   "Sch_2": ""
+ },
+ {
+   "Name": "36  914 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 189.8,
+   "kg_per_m": 282.3,
+   "Sch_1": "XS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "42  1067 mm",
+   "WT_inch": 0.375,
+   "WT_mm": 9.53,
+   "lb_per_ft": 166.9,
+   "kg_per_m": 248.5,
+   "Sch_1": "STD",
+   "Sch_2": ""
+ },
+ {
+   "Name": "42  1067 mm",
+   "WT_inch": 0.5,
+   "WT_mm": 12.7,
+   "lb_per_ft": 221.8,
+   "kg_per_m": 330.2,
+   "Sch_1": "XS",
+   "Sch_2": ""
+ },
+ {
+   "Name": "42  1067 mm",
+   "WT_inch": 0.625,
+   "WT_mm": 15.88,
+   "lb_per_ft": 276.4,
+   "kg_per_m": 411.6,
+   "Sch_1": "",
+   "Sch_2": ""
+ },
+ {
+   "Name": "42  1067 mm",
+   "WT_inch": 0.75,
+   "WT_mm": 19.05,
+   "lb_per_ft": 330.7,
+   "kg_per_m": 492.3,
+   "Sch_1": "",
+   "Sch_2": ""
+ }
+]
