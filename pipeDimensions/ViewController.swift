@@ -9,129 +9,106 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
     @IBOutlet weak var tableView: UITableView!
-    
     @IBOutlet weak var wtHeader: UILabel!
-    
     @IBOutlet weak var wtmmHeader: UILabel!
-    
     @IBOutlet weak var lbftHeader: UILabel!
-    
     @IBOutlet weak var kgmHeader: UILabel!
-    
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var schHeader: UILabel!
+    
     var p : [pipeData] = []
     var wanted : [pipeData] = []
     
     @IBOutlet weak var selector: UIPickerView!
-    
     @IBOutlet weak var pickerHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var WTinchesBoldButton: UIButton!
     @IBOutlet weak var headerView: UIView!
-    
     @IBOutlet weak var inches_mm_space: NSLayoutConstraint!
-    
-    
     @IBOutlet weak var mm_lbft_space: NSLayoutConstraint!
-    
     @IBOutlet weak var lbft_kg_space: NSLayoutConstraint!
-    
     @IBOutlet weak var sch_space_fromright: NSLayoutConstraint!
-    
     @IBOutlet weak var headerHeight: NSLayoutConstraint!
-    
     @IBOutlet weak var WTInchesWidth: NSLayoutConstraint!
+  
+    
     var dataManager = DataManager()
     
     let defaults = UserDefaults.standard
     
-    
-   
-    
     @IBOutlet weak var WTmmBold: UIButton!
-    
     
     @IBAction func WTmmBoldPressed(_ sender: UIButton) {
         
+      
         defaults.set(true, forKey: "mmBold")
+        defaults.set(false, forKey: "inBold")
         
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            
+        mmPref = true
+        inPref = false
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
             wtHeader.Style15_Subhead()
             wtmmHeader.Style17_HeadlineBold()
-            
-        }
-        
-        
-        
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            
-            
+        default:
             wtHeader.Style17_HeadlineThin()
             wtmmHeader.Style17_HeadlineBold()
         }
-        tableView.reloadData()
         
        
         self.tableView.reloadData()
         
-        
-       
     }
     
     
     @IBAction func WTInchesBoldPressed(_ sender: UIButton) {
         
-        
-        
         defaults.set(false, forKey: "mmBold")
         
-        if UIDevice.current.userInterfaceIdiom == .phone {
-            
+        defaults.set(true, forKey: "inBold")
+        
+        mmPref = false
+        inPref = true
+        
+        switch UIDevice.current.userInterfaceIdiom {
+        case .phone:
             wtHeader.Style17_HeadlineBold()
             wtmmHeader.Style15_Subhead()
-            
-            
-            
-        }
-        
-        
-        
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            
-            
-            
+        default:
             wtHeader.Style17_HeadlineBold()
             wtmmHeader.Style17_HeadlineThin()
         }
+     
         
-        tableView.reloadData()
-        print(defaults.bool(forKey: "mmBold"))
+        self.tableView.reloadData()
+        
     }
     
     override func viewDidLayoutSubviews() {
-        
-        
+       
+        mmPref = defaults.bool(forKey: "mmBold")
+         inPref = defaults.bool(forKey: "inBold")
+   
         
         if UIDevice.current.userInterfaceIdiom == .phone {
-            
-            
-            
-            
-            if defaults.bool(forKey: "mmBold") == true {
+            if mmPref == true {
                 
                 wtHeader.Style15_Subhead()
                 wtmmHeader.Style17_HeadlineBold()
-                
             }
-            
-            else {
-                wtHeader.Style17_HeadlineBold()
-                wtmmHeader.Style15_Subhead()
-                
-                
+           else {
+               if inPref == true {
+                   wtHeader.Style17_HeadlineBold()
+                   wtmmHeader.Style15_Subhead()
+                          
+               } else {
+                   wtHeader.Style15_Subhead()
+                   wtmmHeader.Style17_HeadlineBold()
+
+               }
+
             }
             
             lbftHeader.Style15_Subhead()
@@ -139,123 +116,147 @@ class ViewController: UIViewController {
             schHeader.Style15_Subhead()
         }
         
-        
-        
         if UIDevice.current.userInterfaceIdiom == .pad {
             
-            
-            print(headerView.frame.width)
-            
-            
-            if defaults.bool(forKey: "mmBold") == true {
+
+            if mmPref == true {
+                
                 wtHeader.Style17_HeadlineThin()
                 wtmmHeader.Style17_HeadlineBold()
-                
-            } else {
-                wtHeader.Style17_HeadlineBold()
-                wtmmHeader.Style17_HeadlineThin()
-                
             }
-            
+           else {
+               if inPref == true {
+                   wtHeader.Style17_HeadlineBold()
+                   wtmmHeader.Style17_HeadlineThin()
+                          
+               } else {
+                   wtHeader.Style17_HeadlineThin()
+                   wtmmHeader.Style17_HeadlineBold()
+
+               }
+
+            }
             
             lbftHeader.Style17_HeadlineThin()
             kgmHeader.Style17_HeadlineThin()
             schHeader.Style17_HeadlineThin()
             
+            let hW = headerView.frame.width
+            
+   
+            
             if UIApplication.shared.preferredContentSizeCategory < .extraLarge {
-                // small font
-                if headerView.frame.width <= 490 {
-                    // small font - smallest iPad
-                    //okay!
-                    headerHeight.constant = 45
-                     
-                     inches_mm_space.constant = 40
-                     mm_lbft_space.constant = 40
-                     lbft_kg_space.constant = 50
-                     sch_space_fromright.constant = 20
-                }
-                
-                if headerView.frame.width < 600 && headerView.frame.width > 490 {
-                    
-                    // small font - mid iPad
-                    
-                    
-                    headerHeight.constant = 45
-                     
-                     inches_mm_space.constant = 45
-                     mm_lbft_space.constant = 50
-                     lbft_kg_space.constant = 50
-                     sch_space_fromright.constant = 20
-                }
-                
-                
-                if headerView.frame.width == 600  {
-                    // small font - largest iPad
-                    //okay!
-                    headerHeight.constant = 45
-                     
-                     inches_mm_space.constant = 75
-                     mm_lbft_space.constant = 75
-                     lbft_kg_space.constant = 80
-                     sch_space_fromright.constant = 20
-                    
-                }
+     
              
-
+                headerHeight.constant = 45
                 pickerHeight.constant = 175.0
+                
+                if hW <= 320 {
+                 
+                    
+                    inches_mm_space.constant = 5
+                    mm_lbft_space.constant = 5
+                    
+                    lbft_kg_space.constant = 17
+                    
+                    sch_space_fromright.constant = 10
+                }
+                
+                
+                if  hW > 320 && hW < 490 {
+          
+                    
+                    inches_mm_space.constant = (75/280)*hW - 85.714
+                    
+                    mm_lbft_space.constant = 0.225*hW - 50
+                    
+                    lbft_kg_space.constant = 0.225*hW - 55
+                    
+                    
+                    sch_space_fromright.constant = 10
+                }
+                
+                if hW >= 490 && hW < 600  {
+                   
+                    inches_mm_space.constant = (75/280)*hW - 85.714
+                    
+                    mm_lbft_space.constant = 0.225*hW - 50
+                    
+                    lbft_kg_space.constant = 0.225*hW - 50
+                    
+                    sch_space_fromright.constant = 10
+                }
+                
+                
+                if hW == 600  {
+                  
+                    
+                    inches_mm_space.constant = 75
+                    
+                    mm_lbft_space.constant = 85
+                    
+                    lbft_kg_space.constant = 85
+                    
+                    sch_space_fromright.constant = 10
+                    
+                }
+                
                 selector.updateConstraintsIfNeeded()
                 
             } else {
-            
-                // LARGE FONT
-                
-                
-                if headerView.frame.width <= 490 {
-                    //large font  - smallest iPad
-                    
-                    headerHeight.constant = 60
-                    WTInchesWidth.constant = 60
-
-
-
-                    inches_mm_space.constant = 50
-                    mm_lbft_space.constant = 40
-                    lbft_kg_space.constant = 40
-                    sch_space_fromright.constant = 20
-                }
-                
-                
-                if headerView.frame.width < 600 && headerView.frame.width > 490 {
-                 //large font  - mid iPad
+             
                 headerHeight.constant = 60
-                WTInchesWidth.constant = 60
-
-
-
-                inches_mm_space.constant = 50
-                mm_lbft_space.constant = 50
-                lbft_kg_space.constant = 50
-                sch_space_fromright.constant = 20
+                pickerHeight.constant = 275
+                
+                
+                if hW <= 320 {
+            
+              
+                    
+                    inches_mm_space.constant = 5
+                    mm_lbft_space.constant = 5
+                    lbft_kg_space.constant = 17
+                    
+                    sch_space_fromright.constant = 5
                 }
                 
-                
-                
-               if headerView.frame.width == 600 {
-                    
-                  //large font  - large iPad
-                    headerHeight.constant = 60
+                if hW > 320 && hW < 490 {
+               
                     WTInchesWidth.constant = 60
-
+                    
+                    inches_mm_space.constant = (75/280)*hW - 80.714
+                    
+                    
+                    mm_lbft_space.constant = 0.225*hW - 50
+                    lbft_kg_space.constant = 0.225*hW - 60
+                    
+                    sch_space_fromright.constant = 10
+                }
+                
+                if hW > 490 && hW < 600  {
+               
+                    WTInchesWidth.constant = 60
+                    
+                    inches_mm_space.constant = (75/280)*hW - 80.714
+                    
+                    mm_lbft_space.constant = 0.225*hW - 50
+                    lbft_kg_space.constant = 0.225*hW - 50
+                    
+                    sch_space_fromright.constant = 10
+                }
+                
+                if hW == 600 {
+                    
+                    WTInchesWidth.constant = 60
+                    
                     inches_mm_space.constant = 80
                     mm_lbft_space.constant = 80
                     lbft_kg_space.constant = 80
-                    sch_space_fromright.constant = 20
+                    
+                    sch_space_fromright.constant = 10
                     
                 }
                 
-                
-                
-                pickerHeight.constant = 275
                 selector.updateConstraintsIfNeeded()
                 
             }
@@ -263,16 +264,8 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
-   
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-      
         
         
         tableView.dataSource = self
@@ -282,20 +275,12 @@ class ViewController: UIViewController {
         
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "pipeCell")
         
-        
-        
         if let url = Bundle.main.url(forResource: "actualData", withExtension: "json") {
             do {
-                
-                
-                
                 let data = try Data(contentsOf: url)
                 let decoder = JSONDecoder()
-                
                 let jsonData = try decoder.decode([pipeData].self, from: data)
-                
                 p = jsonData
-                
                 
             } catch {
                 print("error:\(error)")
@@ -304,7 +289,10 @@ class ViewController: UIViewController {
             }
         }
         
+        mmPref = defaults.bool(forKey: "mmBold")
+         inPref = defaults.bool(forKey: "inBold")
         
+          
     }
 }
 
@@ -332,13 +320,9 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         
         return dataManager.diameterArray.count
         
-        
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        
-        
-        
         
         return dataManager.diameterArray[row]
     }
@@ -367,10 +351,7 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
-        
-        
         let selectedPipe = dataManager.diameterArray[row]
-        
         if selectedPipe != "NPS [inches]  OD [mm]" {
             
             wanted = p.filter({return $0.Name == selectedPipe})
@@ -395,6 +376,7 @@ extension ViewController: UITableViewDataSource {
         
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let wanteddata = wanted[indexPath.row]
@@ -408,76 +390,68 @@ extension ViewController: UITableViewDataSource {
         cell.sch1.text = wanteddata.Sch_1
         cell.sch2.text = wanteddata.Sch_2
         
-
-        
         if UIDevice.current.userInterfaceIdiom == .phone {
             
             
-            
-            if defaults.bool(forKey: "mmBold") == true {
+            if mmPref == true {
                 
                 cell.inches.Style15_Subhead()
                 cell.mm.Style17_HeadlineBold()
-                
+            }
+           else {
+               if inPref == true {
+                   cell.inches.Style17_HeadlineBold()
+                   cell.mm.Style15_Subhead()
+                          
+               } else {
+                   cell.inches.Style15_Subhead()
+                   cell.mm.Style17_HeadlineBold()
+
+               }
+
             }
             
-            if defaults.bool(forKey: "mmBold") == false {
-                cell.inches.Style17_HeadlineBold()
-                cell.mm.Style15_Subhead()
-                
-                
-                
-            }
+            
             cell.lbft.Style15_Subhead()
             cell.kgm.Style15_Subhead()
             cell.sch1.Style13_Footnote()
             cell.sch2.Style13_Footnote()
             
-            
-            
-            
-            
+           
         }
-        if #available(iOS 14.0, *) {
-            if UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac {
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+        
+            
+            if mmPref == true {
                 
-                
-                
-                
-                if defaults.bool(forKey: "mmBold") == true {
-                    
-                    cell.inches.Style17_HeadlineThin()
-                    cell.mm.Style17_HeadlineBold()
-                    
-                }
-                
-                if defaults.bool(forKey: "mmBold") == false {
-                    
-                    cell.inches.Style17_HeadlineBold()
-                    cell.mm.Style17_HeadlineThin()
-                    
-                    
-                }
-                
-                
-                cell.lbft.Style17_HeadlineThin()
-                cell.kgm.Style17_HeadlineThin()
-                cell.sch1.Style15_Subhead()
-                cell.sch2.Style15_Subhead()
-                
+                cell.inches.Style17_HeadlineThin()
+                cell.mm.Style17_HeadlineBold()
             }
-        } else {
-            // Fallback on earlier versions
+           else {
+               if inPref == true {
+                   cell.inches.Style17_HeadlineBold()
+                   cell.mm.Style17_HeadlineThin()
+                          
+               } else {
+                   cell.inches.Style17_HeadlineThin()
+                   cell.mm.Style17_HeadlineBold()
+
+               }
+
+            }
             
+            
+            
+            cell.lbft.Style17_HeadlineThin()
+            cell.kgm.Style17_HeadlineThin()
+            cell.sch1.Style15_Subhead()
+            cell.sch2.Style15_Subhead()
             
         }
-    
         
+       
         return cell
-        
-        
-        
-        
         
     }
 }
