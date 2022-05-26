@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftRater
 
 class ViewController: UIViewController {
     
@@ -85,6 +86,13 @@ class ViewController: UIViewController {
         self.tableView.reloadData()
         
     }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+            super.viewDidAppear(animated)
+            SwiftRater.check()
+        }
+    
     
     override func viewDidLayoutSubviews() {
        
@@ -350,6 +358,9 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        
+        SwiftRater.incrementSignificantUsageCount()
         
         let selectedPipe = dataManager.diameterArray[row]
         if selectedPipe != "NPS [inches]  OD [mm]" {

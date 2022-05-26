@@ -3,13 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3EA951E8248EFB0F00836BEC /* actualData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EA951E7248EFB0F00836BEC /* actualData.json */; };
 		3EA951F3248F26D900836BEC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA951F1248F26D900836BEC /* TableViewCell.swift */; };
 		3EA951F4248F26D900836BEC /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA951F2248F26D900836BEC /* TableViewCell.xib */; };
+		3EBBD957283F4BC60097A19A /* SwiftRater in Frameworks */ = {isa = PBXBuildFile; productRef = 3EBBD956283F4BC60097A19A /* SwiftRater */; };
 		3ED9ABB12618BEF10087D409 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED9ABB02618BEF10087D409 /* Common.swift */; };
 		3EE126B6248DE6A000B73933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE126B5248DE6A000B73933 /* AppDelegate.swift */; };
 		3EE126B8248DE6A000B73933 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE126B7248DE6A000B73933 /* SceneDelegate.swift */; };
@@ -41,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3EBBD957283F4BC60097A19A /* SwiftRater in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +101,9 @@
 			dependencies = (
 			);
 			name = pipeDimensions;
+			packageProductDependencies = (
+				3EBBD956283F4BC60097A19A /* SwiftRater */,
+			);
 			productName = pipeDimensions;
 			productReference = 3EE126B2248DE6A000B73933 /* SteelPipe.app */;
 			productType = "com.apple.product-type.application";
@@ -127,6 +132,9 @@
 				Base,
 			);
 			mainGroup = 3EE126A9248DE6A000B73933;
+			packageReferences = (
+				3EBBD955283F4BC50097A19A /* XCRemoteSwiftPackageReference "SwiftRater" */,
+			);
 			productRefGroup = 3EE126B3248DE6A000B73933 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -327,7 +335,7 @@
 				PRODUCT_NAME = SteelPipe;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -357,7 +365,7 @@
 				PRODUCT_NAME = SteelPipe;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
-				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,6 +394,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3EBBD955283F4BC50097A19A /* XCRemoteSwiftPackageReference "SwiftRater" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/takecian/SwiftRater.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		3EBBD956283F4BC60097A19A /* SwiftRater */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3EBBD955283F4BC50097A19A /* XCRemoteSwiftPackageReference "SwiftRater" */;
+			productName = SwiftRater;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EE126AA248DE6A000B73933 /* Project object */;
 }
