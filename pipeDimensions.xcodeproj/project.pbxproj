@@ -27,7 +27,7 @@
 		3EA951F2248F26D900836BEC /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
 		3EC346FF274CC27500DE3CAE /* pipeDimensionsRelease.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pipeDimensionsRelease.entitlements; sourceTree = "<group>"; };
 		3ED9ABB02618BEF10087D409 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
-		3EE126B2248DE6A000B73933 /* SteelPipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SteelPipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3EE126B2248DE6A000B73933 /* Steel Pipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Steel Pipe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EE126B5248DE6A000B73933 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3EE126B7248DE6A000B73933 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		3EE126B9248DE6A000B73933 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 		3EE126B3248DE6A000B73933 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3EE126B2248DE6A000B73933 /* SteelPipe.app */,
+				3EE126B2248DE6A000B73933 /* Steel Pipe.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -105,7 +105,7 @@
 				3EBBD956283F4BC60097A19A /* SwiftRater */,
 			);
 			productName = pipeDimensions;
-			productReference = 3EE126B2248DE6A000B73933 /* SteelPipe.app */;
+			productReference = 3EE126B2248DE6A000B73933 /* Steel Pipe.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -250,6 +250,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "Steel Pipe";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -305,6 +306,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "Steel Pipe";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -321,24 +323,25 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = L72AHQX6U8;
 				ENABLE_APP_SANDBOX = NO;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = pipeDimensions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickkhotenko.pipedimensions;
-				PRODUCT_NAME = SteelPipe;
+				PRODUCT_NAME = "Steel Pipe";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -351,24 +354,25 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_TEAM = L72AHQX6U8;
 				ENABLE_APP_SANDBOX = NO;
+				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = pipeDimensions/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 4.3;
+				MARKETING_VERSION = 4.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickkhotenko.pipedimensions;
-				PRODUCT_NAME = SteelPipe;
+				PRODUCT_NAME = "Steel Pipe";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

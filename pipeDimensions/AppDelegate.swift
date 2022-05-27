@@ -19,8 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         SwiftRater.daysUntilPrompt = 3
-        SwiftRater.usesUntilPrompt = 5
-        SwiftRater.significantUsesUntilPrompt = 10
+        SwiftRater.usesUntilPrompt = 4
+        SwiftRater.significantUsesUntilPrompt = 7
         SwiftRater.daysBeforeReminding = 3
         
         SwiftRater.showLaterButton = true
