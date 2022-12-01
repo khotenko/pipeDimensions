@@ -77,32 +77,69 @@ extension UIFont {
         let metrics = UIFontMetrics(forTextStyle: style)
 
 
-        if UIDevice.current.userInterfaceIdiom == .pad {
-            
-            if style == TextStyle.headline {
-                       
-                       return metrics.scaledFont(for: font, maximumPointSize: 30.0)
-                   }
-                   
-                   
-                   if style == TextStyle.subheadline {
-                       
-                       return metrics.scaledFont(for: font, maximumPointSize: 25.0)
-                   }
-                   
-                   if style == TextStyle.footnote{
-                       
-                       return metrics.scaledFont(for: font, maximumPointSize: 20.0)
-                   }
-            
-                   else {
-                               
-                               return metrics.scaledFont(for: font)
-                           }
-
+        if #available(macCatalyst 14.0, *) {
+            if UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac{
+                
+             
+                if style == TextStyle.title3 {
+                    
+                    return metrics.scaledFont(for: font, maximumPointSize: 33.0)
+                }
+                
+                
+                if style == TextStyle.headline {
+                    
+                    return metrics.scaledFont(for: font, maximumPointSize: 30.0)
+                }
+                
+                
+                if style == TextStyle.subheadline {
+                    
+                    return metrics.scaledFont(for: font, maximumPointSize: 25.0)
+                }
+                
+                if style == TextStyle.footnote{
+                    
+                    return metrics.scaledFont(for: font, maximumPointSize: 20.0)
+                }
+                
+                else {
+                    
+                    return metrics.scaledFont(for: font)
+                }
+                
+            }
+        } else {
+            // Fallback on earlier versions
         }
         
     
+   
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                
+                if style == TextStyle.headline {
+                    
+                    return metrics.scaledFont(for: font, maximumPointSize: 30.0)
+                }
+                
+                
+                if style == TextStyle.subheadline {
+                    
+                    return metrics.scaledFont(for: font, maximumPointSize: 25.0)
+                }
+                
+                if style == TextStyle.footnote{
+                    
+                    return metrics.scaledFont(for: font, maximumPointSize: 20.0)
+                }
+                
+                else {
+                    
+                    return metrics.scaledFont(for: font)
+                }
+                
+            }
+      
         
         if UIDevice.current.userInterfaceIdiom == .phone {
             
@@ -151,27 +188,58 @@ extension UILabel {
 
     
     func Style17_HeadlineBold(){
-        self.font = UIFont.preferredFont(for: .headline, weight: .regular, italic: false)
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            self.font = UIFont.preferredFont(for: .headline, weight: .regular, italic: false)
+
+        } else {
+            
+            self.font = UIFont.preferredFont(for: .title3, weight: .bold, italic: false)
+
+        }
         
     }
     func Style17_HeadlineThin(){
-        self.font = UIFont.preferredFont(for: .headline, weight: .thin, italic: false)
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            
+            self.font = UIFont.preferredFont(for: .headline, weight: .thin, italic: false)
+        } else {
+            self.font = UIFont.preferredFont(for: .title3, weight: .regular, italic: false)
+
+        }
         
     }
     
     
     func Style17_HeadlineLight(){
-        self.font = UIFont.preferredFont(for: .headline, weight: .regular, italic: false)
+        
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            self.font = UIFont.preferredFont(for: .headline, weight: .regular, italic: false)
+        } else{
+            self.font = UIFont.preferredFont(for: .title3, weight: .bold, italic: false)
+        }
         
     }
     
     func Style15_Subhead(){
-        self.font = UIFont.preferredFont(for: .subheadline, weight: .thin, italic: false)
+      
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            self.font = UIFont.preferredFont(for: .subheadline, weight: .thin, italic: false)
+        } else {
+            self.font = UIFont.preferredFont(for: .headline, weight: .regular, italic: false)
+
+        }
         
     }
     
     func Style13_Footnote(){
-        self.font = UIFont.preferredFont(for: .footnote, weight: .thin, italic: false)
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            self.font = UIFont.preferredFont(for: .footnote, weight: .thin, italic: false)
+        } else{
+            self.font = UIFont.preferredFont(for: .subheadline, weight: .regular, italic: false)
+
+            
+        }
 
         
     }

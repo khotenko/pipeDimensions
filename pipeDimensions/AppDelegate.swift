@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         SwiftRater.daysBeforeReminding = 3
         
         SwiftRater.showLaterButton = true
-        
+        //hi
         SwiftRater.debugMode = false
         
         SwiftRater.appLaunched()
