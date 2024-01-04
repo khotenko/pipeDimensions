@@ -23,7 +23,7 @@ struct DataManager {
                          "3/8  17.1 mm",
                          "1/2  21.3 mm",
                          "3/4  26.7 mm",
-                         "1  33.3 mm",
+                         "1  33.4 mm",
                          "1-1/4  42.2 mm",
                          "1-1/2  48.3 mm",
                          "2  60.3 mm",
@@ -78,36 +78,40 @@ extension UIFont {
 
 
         if #available(macCatalyst 14.0, *) {
-            if UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac{
-                
-             
-                if style == TextStyle.title3 {
+            if #available(iOS 14.0, *) {
+                if UIDevice.current.userInterfaceIdiom == .pad || UIDevice.current.userInterfaceIdiom == .mac{
                     
-                    return metrics.scaledFont(for: font, maximumPointSize: 33.0)
-                }
-                
-                
-                if style == TextStyle.headline {
                     
-                    return metrics.scaledFont(for: font, maximumPointSize: 30.0)
-                }
-                
-                
-                if style == TextStyle.subheadline {
+                    if style == TextStyle.title3 {
+                        
+                        return metrics.scaledFont(for: font, maximumPointSize: 33.0)
+                    }
                     
-                    return metrics.scaledFont(for: font, maximumPointSize: 25.0)
-                }
-                
-                if style == TextStyle.footnote{
                     
-                    return metrics.scaledFont(for: font, maximumPointSize: 20.0)
-                }
-                
-                else {
+                    if style == TextStyle.headline {
+                        
+                        return metrics.scaledFont(for: font, maximumPointSize: 30.0)
+                    }
                     
-                    return metrics.scaledFont(for: font)
+                    
+                    if style == TextStyle.subheadline {
+                        
+                        return metrics.scaledFont(for: font, maximumPointSize: 25.0)
+                    }
+                    
+                    if style == TextStyle.footnote{
+                        
+                        return metrics.scaledFont(for: font, maximumPointSize: 20.0)
+                    }
+                    
+                    else {
+                        
+                        return metrics.scaledFont(for: font)
+                    }
+                    
                 }
-                
+            } else {
+                // Fallback on earlier versions
             }
         } else {
             // Fallback on earlier versions
