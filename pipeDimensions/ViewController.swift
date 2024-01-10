@@ -363,12 +363,12 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
         SwiftRater.incrementSignificantUsageCount()
         
         let selectedPipe = dataManager.diameterArray[row]
-        if selectedPipe != "NPS [inches]  OD [mm]" {
+        if selectedPipe != "NPS [inches]  OD [mm] OD [in]" {
             
             wanted = p.filter({return $0.Name == selectedPipe})
         }
         
-        if selectedPipe == "NPS [inches]  OD [mm]" {
+        if selectedPipe == "NPS [inches]  OD [mm] OD [in]" {
             wanted = []
             
         }
