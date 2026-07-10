@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2275D327300089F5006D62AA /* pipe_screen.dart in Resources */ = {isa = PBXBuildFile; fileRef = 2275D326300089F5006D62AA /* pipe_screen.dart */; };
+		2275D32930008EE5006D62AA /* SagittaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D32830008EE5006D62AA /* SagittaViewController.swift */; };
+		2275D32B30008EED006D62AA /* SagittaSchematicViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D32A30008EED006D62AA /* SagittaSchematicViews.swift */; };
+		2275D32D30008EF3006D62AA /* SagittaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D32C30008EF3006D62AA /* SagittaModels.swift */; };
+		2275D32F30008EFD006D62AA /* SagittaCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D32E30008EFD006D62AA /* SagittaCalculator.swift */; };
 		3EA951E8248EFB0F00836BEC /* actualData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EA951E7248EFB0F00836BEC /* actualData.json */; };
 		3EA951F3248F26D900836BEC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA951F1248F26D900836BEC /* TableViewCell.swift */; };
 		3EA951F4248F26D900836BEC /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA951F2248F26D900836BEC /* TableViewCell.xib */; };
@@ -21,6 +26,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2275D326300089F5006D62AA /* pipe_screen.dart */ = {isa = PBXFileReference; lastKnownFileType = text; path = pipe_screen.dart; sourceTree = "<group>"; };
+		2275D32830008EE5006D62AA /* SagittaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagittaViewController.swift; sourceTree = "<group>"; };
+		2275D32A30008EED006D62AA /* SagittaSchematicViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagittaSchematicViews.swift; sourceTree = "<group>"; };
+		2275D32C30008EF3006D62AA /* SagittaModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagittaModels.swift; sourceTree = "<group>"; };
+		2275D32E30008EFD006D62AA /* SagittaCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagittaCalculator.swift; sourceTree = "<group>"; };
 		3E10A8BF27497D7F00C0CE79 /* pipeDimensions.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = pipeDimensions.entitlements; sourceTree = "<group>"; };
 		3EA951E7248EFB0F00836BEC /* actualData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = actualData.json; sourceTree = "<group>"; };
 		3EA951F1248F26D900836BEC /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -68,9 +78,14 @@
 		3EE126B4248DE6A000B73933 /* pipeDimensions */ = {
 			isa = PBXGroup;
 			children = (
+				2275D326300089F5006D62AA /* pipe_screen.dart */,
 				3E10A8BF27497D7F00C0CE79 /* pipeDimensions.entitlements */,
 				3EC346FF274CC27500DE3CAE /* pipeDimensionsRelease.entitlements */,
 				3EE126B5248DE6A000B73933 /* AppDelegate.swift */,
+				2275D32830008EE5006D62AA /* SagittaViewController.swift */,
+				2275D32A30008EED006D62AA /* SagittaSchematicViews.swift */,
+				2275D32C30008EF3006D62AA /* SagittaModels.swift */,
+				2275D32E30008EFD006D62AA /* SagittaCalculator.swift */,
 				3EE126B7248DE6A000B73933 /* SceneDelegate.swift */,
 				3EE126BB248DE6A000B73933 /* Main.storyboard */,
 				3EE126B9248DE6A000B73933 /* ViewController.swift */,
@@ -153,6 +168,7 @@
 				3EA951F4248F26D900836BEC /* TableViewCell.xib in Resources */,
 				3EE126BF248DE6A400B73933 /* Assets.xcassets in Resources */,
 				3EE126BD248DE6A000B73933 /* Main.storyboard in Resources */,
+				2275D327300089F5006D62AA /* pipe_screen.dart in Resources */,
 				3EA951E8248EFB0F00836BEC /* actualData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -164,11 +180,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2275D32B30008EED006D62AA /* SagittaSchematicViews.swift in Sources */,
+				2275D32F30008EFD006D62AA /* SagittaCalculator.swift in Sources */,
 				3EA951F3248F26D900836BEC /* TableViewCell.swift in Sources */,
 				3EE126BA248DE6A000B73933 /* ViewController.swift in Sources */,
 				3EE126B6248DE6A000B73933 /* AppDelegate.swift in Sources */,
 				3ED9ABB12618BEF10087D409 /* Common.swift in Sources */,
+				2275D32930008EE5006D62AA /* SagittaViewController.swift in Sources */,
 				3EE126B8248DE6A000B73933 /* SceneDelegate.swift in Sources */,
+				2275D32D30008EF3006D62AA /* SagittaModels.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,10 +342,10 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = pipeDimensions/pipeDimensions.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = L72AHQX6U8;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = pipeDimensions/Info.plist;
@@ -340,7 +360,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickkhotenko.pipedimensions;
 				PRODUCT_NAME = "Steel Pipe";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -357,10 +376,10 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = pipeDimensions/pipeDimensionsRelease.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
-				CODE_SIGN_STYLE = Automatic;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 18;
-				DEVELOPMENT_TEAM = L72AHQX6U8;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_APP_SANDBOX = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = pipeDimensions/Info.plist;
@@ -375,7 +394,6 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickkhotenko.pipedimensions;
 				PRODUCT_NAME = "Steel Pipe";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				"PROVISIONING_PROFILE_SPECIFIER[sdk=macosx*]" = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = YES;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
