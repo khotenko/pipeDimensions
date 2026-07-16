@@ -207,6 +207,14 @@ class ViewController: UIViewController {
     @IBOutlet weak var kgmHeader: UILabel!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var schHeader: UILabel!
+    @IBOutlet weak var headerView: UIView!
+    @IBOutlet weak var inches_mm_space: NSLayoutConstraint!
+    @IBOutlet weak var mm_lbft_space: NSLayoutConstraint!
+    @IBOutlet weak var lbft_kg_space: NSLayoutConstraint!
+    @IBOutlet weak var sch_space_fromright: NSLayoutConstraint!
+    @IBOutlet weak var headerHeight: NSLayoutConstraint!
+    @IBOutlet weak var WTInchesWidth: NSLayoutConstraint!
+    @IBOutlet weak var WTmmBold: UIButton!
     
     var p : [pipeData] = []
     var wanted : [pipeData] = []
@@ -219,20 +227,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var selector: UIPickerView!
     @IBOutlet weak var pickerHeight: NSLayoutConstraint!
     @IBOutlet weak var WTinchesBoldButton: UIButton!
-    @IBOutlet weak var headerView: UIView!
-    @IBOutlet weak var inches_mm_space: NSLayoutConstraint!
-    @IBOutlet weak var mm_lbft_space: NSLayoutConstraint!
-    @IBOutlet weak var lbft_kg_space: NSLayoutConstraint!
-    @IBOutlet weak var sch_space_fromright: NSLayoutConstraint!
-    @IBOutlet weak var headerHeight: NSLayoutConstraint!
-    @IBOutlet weak var WTInchesWidth: NSLayoutConstraint!
-  
     
     var dataManager = DataManager()
-    
     let defaults = UserDefaults.standard
-    
-    @IBOutlet weak var WTmmBold: UIButton!
     
     // NPS Estimation floating button
     private lazy var npsButton: UIButton = {
@@ -366,7 +363,7 @@ class ViewController: UIViewController {
         // Apply configuration to constraints
         applyLayoutConfig(config)
         
-        selector.updateConstraintsIfNeeded()
+        selector?.updateConstraintsIfNeeded()
     }
     
     /// Applies the resolved layout configuration to all relevant constraints
@@ -390,8 +387,9 @@ class ViewController: UIViewController {
         
         tableView.dataSource = self
         
-        selector.dataSource = self
-        selector.delegate = self
+        // Setup picker selector on all platforms
+        selector?.dataSource = self
+        selector?.delegate = self
         
         tableView.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "pipeCell")
         
@@ -480,8 +478,9 @@ class ViewController: UIViewController {
                 // Update on main thread
                 DispatchQueue.main.async {
                     self?.p = jsonData
+                    
                     // If a pipe was already selected somehow, refresh the view
-                    if let selectedRow = self?.selector.selectedRow(inComponent: 0), selectedRow > 0 {
+                    if let selectedRow = self?.selector?.selectedRow(inComponent: 0), selectedRow > 0 {
                         self?.updateWantedData(for: selectedRow)
                     }
                 }
