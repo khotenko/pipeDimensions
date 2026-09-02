@@ -41,12 +41,15 @@ class SagittaViewController: UIViewController {
     private let schematicView = SagittaSchematicView()
     
     // Unit toggle
-    private let unitLabel = UILabel()
     private let unitSegmentedControl = UISegmentedControl(items: ["in", "mm"])
     
     // Input field labels
     private let sagittaLabel = UILabel()
     private let chordLabel = UILabel()
+    
+    // Decimal conversion labels (shown under inputs in inch mode)
+    private let sagittaConversionLabel = UILabel()
+    private let chordConversionLabel = UILabel()
     
     // Input fields
     private let sagittaTextField = UITextField()
@@ -63,6 +66,13 @@ class SagittaViewController: UIViewController {
     
     // Live schematic
     private let liveSchematicView = LivePipeSchematicView()
+    
+    // Recent calculations
+    private var recentCalculations: [RecentCalculation] = []
+    private let recentCalculationsHeaderButton = UIButton(type: .system)
+    private let recentCalculationsStackView = UIStackView()
+    private var isRecentCalculationsExpanded = true
+    private var recentCalculationsShowTimer: Timer?
     
     // MARK: - Initialization
     
@@ -82,6 +92,10 @@ class SagittaViewController: UIViewController {
         setupUI()
         setupConstraints()
         setupActions()
+    }
+    
+    deinit {
+        recentCalculationsShowTimer?.invalidate()
     }
     
     // MARK: - UI Setup
@@ -114,16 +128,6 @@ class SagittaViewController: UIViewController {
         // Close button
         closeButton.addTarget(self, action: #selector(closeTapped), for: .touchUpInside)
         
-        // Description
-        descriptionLabel.text = "Measure only the top of the exposed pipe in the trench."
-        descriptionLabel.font = .preferredFont(forTextStyle: .footnote)
-        if #available(iOS 13.0, *) {
-            descriptionLabel.textColor = .secondaryLabel
-        } else {
-            descriptionLabel.textColor = .darkGray
-        }
-        descriptionLabel.numberOfLines = 0
-        
         // Formula
         formulaLabel.text = "OD = 2·(s² + (c/2)²) / (2·s)"
         formulaLabel.font = UIFont.italicSystemFont(ofSize: 14)
@@ -137,9 +141,6 @@ class SagittaViewController: UIViewController {
         schematicView.translatesAutoresizingMaskIntoConstraints = false
         
         // Unit controls
-        unitLabel.text = "Units:"
-        unitLabel.font = .preferredFont(forTextStyle: .footnote)
-        
         unitSegmentedControl.selectedSegmentIndex = 0
         unitSegmentedControl.addTarget(self, action: #selector(unitChanged), for: .valueChanged)
         
@@ -163,6 +164,9 @@ class SagittaViewController: UIViewController {
         // Input fields
         configureSagittaField()
         configureChordField()
+        
+        // Setup conversion labels
+        setupConversionLabels()
         
         // Error label
         errorLabel.textColor = .systemRed
@@ -194,10 +198,29 @@ class SagittaViewController: UIViewController {
         liveSchematicView.translatesAutoresizingMaskIntoConstraints = false
         liveSchematicView.isHidden = true
         
+        // Recent calculations header button
+        recentCalculationsHeaderButton.setTitle("▼ Recent Calculations", for: .normal)
+        recentCalculationsHeaderButton.titleLabel?.font = .preferredFont(forTextStyle: .caption1)
+        recentCalculationsHeaderButton.addTarget(self, action: #selector(toggleRecentCalculations), for: .touchUpInside)
+        recentCalculationsHeaderButton.isHidden = true
+        recentCalculationsHeaderButton.contentHorizontalAlignment = .left
+        if #available(iOS 13.0, *) {
+            recentCalculationsHeaderButton.setTitleColor(.systemBlue, for: .normal)
+        } else {
+            recentCalculationsHeaderButton.setTitleColor(.blue, for: .normal)
+        }
+        
+        // Recent calculations stack view
+        recentCalculationsStackView.axis = .vertical
+        recentCalculationsStackView.spacing = 2
+        recentCalculationsStackView.isHidden = true
+        
         // Add all subviews
-        [titleLabel, closeButton, descriptionLabel, formulaLabel,
-         schematicView, unitLabel, unitSegmentedControl,
-         sagittaLabel, chordLabel, sagittaTextField, chordTextField, errorLabel,
+        [titleLabel, closeButton, formulaLabel,
+         schematicView, unitSegmentedControl,
+         sagittaLabel, chordLabel, sagittaTextField, chordTextField,
+         sagittaConversionLabel, chordConversionLabel,
+         recentCalculationsHeaderButton, recentCalculationsStackView, errorLabel,
          resultsContainerView, liveSchematicView].forEach {
             $0.translatesAutoresizingMaskIntoConstraints = false
             contentView.addSubview($0)
@@ -210,7 +233,7 @@ class SagittaViewController: UIViewController {
     }
     
     private func configureSagittaField() {
-        sagittaTextField.placeholder = "0.000"
+        sagittaTextField.placeholder = "e.g 5/16"
         sagittaTextField.borderStyle = .roundedRect
         sagittaTextField.keyboardType = .decimalPad
         sagittaTextField.delegate = self
@@ -218,11 +241,29 @@ class SagittaViewController: UIViewController {
     }
     
     private func configureChordField() {
-        chordTextField.placeholder = "0.000"
+        chordTextField.placeholder = "e.g 4 1/4"
         chordTextField.borderStyle = .roundedRect
         chordTextField.keyboardType = .decimalPad
         chordTextField.delegate = self
         chordTextField.addTarget(self, action: #selector(inputChanged), for: .editingChanged)
+    }
+    
+    private func setupConversionLabels() {
+        sagittaConversionLabel.font = .preferredFont(forTextStyle: .caption2)
+        sagittaConversionLabel.isHidden = false
+        if #available(iOS 13.0, *) {
+            sagittaConversionLabel.textColor = .secondaryLabel
+        } else {
+            sagittaConversionLabel.textColor = .darkGray
+        }
+        
+        chordConversionLabel.font = .preferredFont(forTextStyle: .caption2)
+        chordConversionLabel.isHidden = false
+        if #available(iOS 13.0, *) {
+            chordConversionLabel.textColor = .secondaryLabel
+        } else {
+            chordConversionLabel.textColor = .darkGray
+        }
     }
     
     // MARK: - Layout
@@ -250,30 +291,22 @@ class SagittaViewController: UIViewController {
             closeButton.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             closeButton.leadingAnchor.constraint(greaterThanOrEqualTo: titleLabel.trailingAnchor, constant: 8),
             
-            // Description
-            descriptionLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
-            descriptionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            descriptionLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            
             // Formula
-            formulaLabel.topAnchor.constraint(equalTo: descriptionLabel.bottomAnchor, constant: 12),
+            formulaLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 12),
             formulaLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             
             // Schematic
             schematicView.topAnchor.constraint(equalTo: formulaLabel.bottomAnchor, constant: 12),
             schematicView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             schematicView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
-            schematicView.heightAnchor.constraint(equalToConstant: 200),
+            schematicView.heightAnchor.constraint(equalToConstant: 120),
             
             // Unit controls
-            unitLabel.topAnchor.constraint(equalTo: schematicView.bottomAnchor, constant: 16),
-            unitLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
-            
-            unitSegmentedControl.centerYAnchor.constraint(equalTo: unitLabel.centerYAnchor),
-            unitSegmentedControl.leadingAnchor.constraint(equalTo: unitLabel.trailingAnchor, constant: 12),
+            unitSegmentedControl.topAnchor.constraint(equalTo: schematicView.bottomAnchor, constant: 16),
+            unitSegmentedControl.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             
             // Input field labels
-            sagittaLabel.topAnchor.constraint(equalTo: unitLabel.bottomAnchor, constant: 16),
+            sagittaLabel.topAnchor.constraint(equalTo: unitSegmentedControl.bottomAnchor, constant: 16),
             sagittaLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             
             chordLabel.topAnchor.constraint(equalTo: sagittaLabel.topAnchor),
@@ -288,8 +321,15 @@ class SagittaViewController: UIViewController {
             chordTextField.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 6),
             chordTextField.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
+            // Decimal conversion labels (under input fields)
+            sagittaConversionLabel.topAnchor.constraint(equalTo: sagittaTextField.bottomAnchor, constant: 2),
+            sagittaConversionLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            
+            chordConversionLabel.topAnchor.constraint(equalTo: chordTextField.bottomAnchor, constant: 2),
+            chordConversionLabel.leadingAnchor.constraint(equalTo: contentView.centerXAnchor, constant: 6),
+            
             // Error label
-            errorLabel.topAnchor.constraint(equalTo: sagittaTextField.bottomAnchor, constant: 8),
+            errorLabel.topAnchor.constraint(equalTo: chordConversionLabel.bottomAnchor, constant: 8),
             errorLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             errorLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             
@@ -317,7 +357,16 @@ class SagittaViewController: UIViewController {
             liveSchematicView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
             liveSchematicView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
             liveSchematicView.heightAnchor.constraint(equalToConstant: 200),
-            liveSchematicView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
+            
+            // Recent calculations header button
+            recentCalculationsHeaderButton.topAnchor.constraint(equalTo: liveSchematicView.bottomAnchor, constant: 16),
+            recentCalculationsHeaderButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            
+            // Recent calculations stack view
+            recentCalculationsStackView.topAnchor.constraint(equalTo: recentCalculationsHeaderButton.bottomAnchor, constant: 4),
+            recentCalculationsStackView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 20),
+            recentCalculationsStackView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -20),
+            recentCalculationsStackView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -30)
         ])
     }
     
@@ -337,17 +386,51 @@ class SagittaViewController: UIViewController {
         
         // Update labels with unit
         let unitSymbol = currentUnit.symbol
-        sagittaLabel.text = "S (Sagitta) [\(unitSymbol)]"
-        chordLabel.text = "C (Chord) [\(unitSymbol)]"
+        sagittaLabel.text = "S [\(unitSymbol)]"
+        chordLabel.text = "C [\(unitSymbol)]"
+        
+        // Update placeholders based on unit mode
+        if currentUnit == .inches {
+            sagittaTextField.placeholder = "e.g 5/16"
+            chordTextField.placeholder = "e.g 4 1/4"
+            sagittaConversionLabel.isHidden = false
+            chordConversionLabel.isHidden = false
+        } else {
+            sagittaTextField.placeholder = "7.9"
+            chordTextField.placeholder = "114"
+            sagittaConversionLabel.isHidden = true
+            chordConversionLabel.isHidden = true
+        }
         
         // Convert existing values
         convertFieldValues()
+        
+        // Update conversion labels if in inch mode
+        if currentUnit == .inches {
+            updateConversionLabels()
+        }
         
         // Recalculate
         performCalculation()
     }
     
     @objc private func inputChanged() {
+        // Update conversion labels if in inch mode
+        if currentUnit == .inches {
+            updateConversionLabels()
+        }
+        
+        // Invalidate existing timer
+        recentCalculationsShowTimer?.invalidate()
+        
+        // Start new timer to save calculation after 2 seconds of inactivity
+        recentCalculationsShowTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false) { [weak self] _ in
+            // Save the current valid result if it exists
+            if let result = self?.currentResult, result.isValid {
+                self?.addToRecentCalculations(result)
+            }
+        }
+        
         performCalculation()
     }
     
@@ -355,18 +438,43 @@ class SagittaViewController: UIViewController {
         view.endEditing(true)
     }
     
+    @objc private func toggleRecentCalculations() {
+        isRecentCalculationsExpanded.toggle()
+        
+        // Only show stack view if there are calculations and expanded
+        if !recentCalculations.isEmpty {
+            recentCalculationsStackView.isHidden = !isRecentCalculationsExpanded
+        }
+        
+        let arrow = isRecentCalculationsExpanded ? "▼" : "▶"
+        recentCalculationsHeaderButton.setTitle("\(arrow) Recent Calculations", for: .normal)
+    }
+    
     // MARK: - Calculation
     
     private func performCalculation() {
         guard let sagittaText = sagittaTextField.text, !sagittaText.isEmpty,
-              let chordText = chordTextField.text, !chordText.isEmpty,
-              let sagitta = Double(sagittaText),
-              let chord = Double(chordText) else {
+              let chordText = chordTextField.text, !chordText.isEmpty else {
             hideResults()
             return
         }
         
-        let result = calculator.calculate(sagitta: sagitta, chord: chord, unit: currentUnit)
+        // Parse input values, supporting fractions in inches mode
+        let sagitta = currentUnit == .inches ?
+            sagittaText.parseFraction() ?? Double(sagittaText) :
+            Double(sagittaText)
+        
+        let chord = currentUnit == .inches ?
+            chordText.parseFraction() ?? Double(chordText) :
+            Double(chordText)
+        
+        guard let sagittaVal = sagitta, sagittaVal > 0,
+              let chordVal = chord, chordVal > 0 else {
+            hideResults()
+            return
+        }
+        
+        let result = calculator.calculate(sagitta: sagittaVal, chord: chordVal, unit: currentUnit)
         currentResult = result
         
         if result.isValid {
@@ -415,6 +523,8 @@ class SagittaViewController: UIViewController {
         
         // Update live schematic
         liveSchematicView.updateOD(result.estimatedOD)
+        
+        // Do NOT save to recent calculations immediately - let the debounce timer handle it
     }
     
     private func createMatchView(for match: NPSMatch, result: NPSEstimationResult) -> UIView {
@@ -524,13 +634,131 @@ class SagittaViewController: UIViewController {
         // Convert between units when toggle changes
         let factor = currentUnit == .inches ? (1.0 / 25.4) : 25.4
         
-        if let text = sagittaTextField.text, let value = Double(text) {
-            sagittaTextField.text = String(format: "%.3f", value * factor)
+        // Convert sagitta field
+        if let text = sagittaTextField.text, !text.isEmpty {
+            // Try to parse as fraction first (when converting FROM inches)
+            let value = text.parseFraction() ?? Double(text) ?? 0
+            if value > 0 {
+                sagittaTextField.text = String(format: "%.3f", value * factor)
+            }
         }
         
-        if let text = chordTextField.text, let value = Double(text) {
-            chordTextField.text = String(format: "%.3f", value * factor)
+        // Convert chord field
+        if let text = chordTextField.text, !text.isEmpty {
+            // Try to parse as fraction first (when converting FROM inches)
+            let value = text.parseFraction() ?? Double(text) ?? 0
+            if value > 0 {
+                chordTextField.text = String(format: "%.3f", value * factor)
+            }
         }
+    }
+    
+    private func updateConversionLabels() {
+        // Update sagitta conversion label - only show for fractions
+        if let text = sagittaTextField.text, !text.isEmpty,
+           text.contains("/") {
+            if let value = text.parseFraction() {
+                sagittaConversionLabel.text = "\(text) is = \(String(format: "%.3f", value))"
+            }
+        } else {
+            sagittaConversionLabel.text = ""
+        }
+        
+        // Update chord conversion label - only show for fractions
+        if let text = chordTextField.text, !text.isEmpty,
+           text.contains("/") {
+            if let value = text.parseFraction() {
+                chordConversionLabel.text = "\(text) is = \(String(format: "%.3f", value))"
+            }
+        } else {
+            chordConversionLabel.text = ""
+        }
+    }
+    
+    private func addToRecentCalculations(_ result: NPSEstimationResult) {
+        // Limit recent calculations to 10 entries
+        if recentCalculations.count >= 10 {
+            recentCalculations.removeLast()
+        }
+        
+        // Capture the exact user input strings
+        let sagittaInput = sagittaTextField.text ?? ""
+        let chordInput = chordTextField.text ?? ""
+        
+        // Add new calculation
+        let newCalculation = RecentCalculation(
+            result: result,
+            date: Date(),
+            sagittaInput: sagittaInput,
+            chordInput: chordInput
+        )
+        recentCalculations.insert(newCalculation, at: 0)
+        
+        // Update UI
+        updateRecentCalculationsUI()
+    }
+    
+    private func updateRecentCalculationsUI() {
+        // Clear existing views
+        recentCalculationsStackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
+        
+        // Show/hide entire section based on whether there are calculations
+        let hasCalculations = !recentCalculations.isEmpty
+        recentCalculationsHeaderButton.isHidden = !hasCalculations
+        recentCalculationsStackView.isHidden = !hasCalculations || !isRecentCalculationsExpanded
+        
+        // Add entries only if there are calculations
+        if hasCalculations {
+            for calculation in recentCalculations {
+                let entryView = createRecentCalculationEntry(for: calculation)
+                recentCalculationsStackView.addArrangedSubview(entryView)
+            }
+        }
+    }
+    
+    private func createRecentCalculationEntry(for calculation: RecentCalculation) -> UIView {
+        let label = UILabel()
+        label.font = .systemFont(ofSize: 12)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.numberOfLines = 0
+        
+        // Format with stored user input
+        let npsMatch = calculation.result.matches.first { $0.isClosest }
+        let npsLabel = npsMatch?.npsEntry.npsLabel ?? "—"
+        
+        let odFormatted = currentUnit == .inches ?
+            String(format: "%.3f in", calculation.result.estimatedOD) :
+            String(format: "%.1f mm", calculation.result.estimatedOD)
+        
+        // Parse the stored inputs
+        let sagittaParsed = calculation.sagittaInput.parseFraction() ?? 0
+        let chordParsed = calculation.chordInput.parseFraction() ?? 0
+        
+        // Format inputs: only show brackets if input was fractional
+        let sagittaFormatted: String
+        if calculation.sagittaInput.contains("/") {
+            sagittaFormatted = "\(calculation.sagittaInput) (\(String(format: "%.3f", sagittaParsed)))"
+        } else {
+            sagittaFormatted = String(format: "%.3f", sagittaParsed)
+        }
+        
+        let chordFormatted: String
+        if calculation.chordInput.contains("/") {
+            chordFormatted = "\(calculation.chordInput) (\(String(format: "%.3f", chordParsed)))"
+        } else {
+            chordFormatted = String(format: "%.3f", chordParsed)
+        }
+        
+        let text = "S=\(sagittaFormatted) C=\(chordFormatted) → OD = \(odFormatted) | NPS \(npsLabel)"
+        label.text = text
+        
+        if #available(iOS 13.0, *) {
+            label.textColor = .secondaryLabel
+        } else {
+            label.textColor = .darkGray
+        }
+        
+        return label
     }
 }
 
@@ -545,4 +773,62 @@ extension SagittaViewController: UITextFieldDelegate {
         }
         return true
     }
+}
+
+// MARK: - Fraction Parser Utility
+
+/// Extension to parse fraction and mixed number strings
+private extension String {
+    /// Parses fraction strings like "5/16", "4 1/4", "5.25", or "5"
+    /// Returns the decimal value or nil if parsing fails
+    func parseFraction() -> Double? {
+        let trimmed = self.trimmingCharacters(in: .whitespaces)
+        
+        // Empty string
+        guard !trimmed.isEmpty else { return nil }
+        
+        // Try simple decimal first (most common case)
+        if let decimal = Double(trimmed) {
+            return decimal
+        }
+        
+        // Check if it's a mixed number (has space and fraction): "4 1/4"
+        if trimmed.contains(" ") && trimmed.contains("/") {
+            let parts = trimmed.components(separatedBy: " ")
+            if parts.count == 2,
+               let wholePart = Double(parts[0]),
+               let fraction = parseSingleFraction(parts[1]) {
+                return wholePart + fraction
+            }
+        }
+        
+        // Check if it's just a fraction: "5/16"
+        if trimmed.contains("/") {
+            return parseSingleFraction(trimmed)
+        }
+        
+        return nil
+    }
+    
+    /// Parses a single fraction string like "5/16"
+    private func parseSingleFraction(_ fractionStr: String) -> Double? {
+        let components = fractionStr.components(separatedBy: "/")
+        guard components.count == 2,
+              let numerator = Double(components[0].trimmingCharacters(in: .whitespaces)),
+              let denominator = Double(components[1].trimmingCharacters(in: .whitespaces)),
+              denominator != 0 else {
+            return nil
+        }
+        return numerator / denominator
+    }
+}
+
+// MARK: - Recent Calculation Model
+
+/// Represents a single recent calculation
+struct RecentCalculation {
+    let result: NPSEstimationResult
+    let date: Date
+    let sagittaInput: String
+    let chordInput: String
 }

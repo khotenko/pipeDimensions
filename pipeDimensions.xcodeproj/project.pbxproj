@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2275D327300089F5006D62AA /* pipe_screen.dart in Resources */ = {isa = PBXBuildFile; fileRef = 2275D326300089F5006D62AA /* pipe_screen.dart */; };
 		2275D32930008EE5006D62AA /* SagittaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D32830008EE5006D62AA /* SagittaViewController.swift */; };
 		2275D32B30008EED006D62AA /* SagittaSchematicViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D32A30008EED006D62AA /* SagittaSchematicViews.swift */; };
 		2275D32D30008EF3006D62AA /* SagittaModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2275D32C30008EF3006D62AA /* SagittaModels.swift */; };
@@ -15,7 +14,7 @@
 		3EA951E8248EFB0F00836BEC /* actualData.json in Resources */ = {isa = PBXBuildFile; fileRef = 3EA951E7248EFB0F00836BEC /* actualData.json */; };
 		3EA951F3248F26D900836BEC /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EA951F1248F26D900836BEC /* TableViewCell.swift */; };
 		3EA951F4248F26D900836BEC /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3EA951F2248F26D900836BEC /* TableViewCell.xib */; };
-		3EBBD957283F4BC60097A19A /* SwiftRater in Frameworks */ = {isa = PBXBuildFile; productRef = 3EBBD956283F4BC60097A19A /* SwiftRater */; };
+		3EBBD957283F4BC60097A19A /* (null) in Frameworks */ = {isa = PBXBuildFile; };
 		3ED9ABB12618BEF10087D409 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ED9ABB02618BEF10087D409 /* Common.swift */; };
 		3EE126B6248DE6A000B73933 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE126B5248DE6A000B73933 /* AppDelegate.swift */; };
 		3EE126B8248DE6A000B73933 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3EE126B7248DE6A000B73933 /* SceneDelegate.swift */; };
@@ -26,7 +25,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2275D326300089F5006D62AA /* pipe_screen.dart */ = {isa = PBXFileReference; lastKnownFileType = text; path = pipe_screen.dart; sourceTree = "<group>"; };
 		2275D32830008EE5006D62AA /* SagittaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagittaViewController.swift; sourceTree = "<group>"; };
 		2275D32A30008EED006D62AA /* SagittaSchematicViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagittaSchematicViews.swift; sourceTree = "<group>"; };
 		2275D32C30008EF3006D62AA /* SagittaModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SagittaModels.swift; sourceTree = "<group>"; };
@@ -52,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3EBBD957283F4BC60097A19A /* SwiftRater in Frameworks */,
+				3EBBD957283F4BC60097A19A /* (null) in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,7 +76,6 @@
 		3EE126B4248DE6A000B73933 /* pipeDimensions */ = {
 			isa = PBXGroup;
 			children = (
-				2275D326300089F5006D62AA /* pipe_screen.dart */,
 				3E10A8BF27497D7F00C0CE79 /* pipeDimensions.entitlements */,
 				3EC346FF274CC27500DE3CAE /* pipeDimensionsRelease.entitlements */,
 				3EE126B5248DE6A000B73933 /* AppDelegate.swift */,
@@ -116,9 +113,6 @@
 			dependencies = (
 			);
 			name = pipeDimensions;
-			packageProductDependencies = (
-				3EBBD956283F4BC60097A19A /* SwiftRater */,
-			);
 			productName = pipeDimensions;
 			productReference = 3EE126B2248DE6A000B73933 /* Steel Pipe.app */;
 			productType = "com.apple.product-type.application";
@@ -129,8 +123,9 @@
 		3EE126AA248DE6A000B73933 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				BuildIndependentTargetsInParallel = YES;
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1240;
+				LastUpgradeCheck = 2660;
 				ORGANIZATIONNAME = "Nick Khotenko";
 				TargetAttributes = {
 					3EE126B1248DE6A000B73933 = {
@@ -148,7 +143,6 @@
 			);
 			mainGroup = 3EE126A9248DE6A000B73933;
 			packageReferences = (
-				3EBBD955283F4BC50097A19A /* XCRemoteSwiftPackageReference "SwiftRater" */,
 			);
 			productRefGroup = 3EE126B3248DE6A000B73933 /* Products */;
 			projectDirPath = "";
@@ -168,7 +162,6 @@
 				3EA951F4248F26D900836BEC /* TableViewCell.xib in Resources */,
 				3EE126BF248DE6A400B73933 /* Assets.xcassets in Resources */,
 				3EE126BD248DE6A000B73933 /* Main.storyboard in Resources */,
-				2275D327300089F5006D62AA /* pipe_screen.dart in Resources */,
 				3EA951E8248EFB0F00836BEC /* actualData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,9 +242,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = L72AHQX6U8;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -266,12 +261,13 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_NAME = "Steel Pipe";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -312,9 +308,11 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = L72AHQX6U8;
 				ENABLE_APP_SANDBOX = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -323,11 +321,12 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "Steel Pipe";
 				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
@@ -344,8 +343,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = L72AHQX6U8;
+				CURRENT_PROJECT_VERSION = 23;
 				ENABLE_APP_SANDBOX = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = pipeDimensions/Info.plist;
@@ -356,7 +354,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0;
+				MARKETING_VERSION = 5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickkhotenko.pipedimensions;
 				PRODUCT_NAME = "Steel Pipe";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -379,8 +377,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 20;
-				DEVELOPMENT_TEAM = L72AHQX6U8;
+				CURRENT_PROJECT_VERSION = 23;
 				ENABLE_APP_SANDBOX = NO;
 				"ENABLE_HARDENED_RUNTIME[sdk=macosx*]" = NO;
 				INFOPLIST_FILE = pipeDimensions/Info.plist;
@@ -391,7 +388,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 5.0;
+				MARKETING_VERSION = 5.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.nickkhotenko.pipedimensions;
 				PRODUCT_NAME = "Steel Pipe";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -426,25 +423,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		3EBBD955283F4BC50097A19A /* XCRemoteSwiftPackageReference "SwiftRater" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/takecian/SwiftRater.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		3EBBD956283F4BC60097A19A /* SwiftRater */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 3EBBD955283F4BC50097A19A /* XCRemoteSwiftPackageReference "SwiftRater" */;
-			productName = SwiftRater;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 3EE126AA248DE6A000B73933 /* Project object */;
 }

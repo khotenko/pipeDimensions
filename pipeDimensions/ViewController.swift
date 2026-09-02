@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SwiftRater
 
 // MARK: - Layout Configuration
 
@@ -332,7 +331,6 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
             super.viewDidAppear(animated)
-            SwiftRater.check()
         }
     
     
@@ -507,11 +505,21 @@ class ViewController: UIViewController {
 struct pipeData: Decodable {
     var Name: String
     let WT_inch: Float
-    let WT_mm : Float
-    let lb_per_ft : Float
+    let WT_mm: Float
+    let lb_per_ft: Float
     let kg_per_m: Float
     let Sch_1: String
     let Sch_2: String
+    
+    enum CodingKeys: String, CodingKey {
+        case Name = "n"
+        case WT_inch = "wi"
+        case WT_mm = "wm"
+        case lb_per_ft = "lf"
+        case kg_per_m = "km"
+        case Sch_1 = "s1"
+        case Sch_2 = "s2"
+    }
 }
 
 
@@ -557,7 +565,6 @@ extension ViewController: UIPickerViewDataSource, UIPickerViewDelegate{
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        SwiftRater.incrementSignificantUsageCount()
         updateWantedData(for: row)
     }
     

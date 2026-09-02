@@ -140,7 +140,7 @@ class SagittaSchematicView: UIView {
         context.strokePath()
         
         // Draw chord label
-        drawLabel(text: "C", at: CGPoint(x: centerX + halfChord * 0.35, y: chordArrowY - 17), color: chordColor, fontSize: 10)
+        drawLabel(text: "C", at: CGPoint(x: centerX + halfChord * 0.35, y: chordArrowY - 12), color: chordColor, fontSize: 10)
         
         // Draw sagitta double arrow
         drawDoubleArrow(context: context, from: CGPoint(x: centerX, y: chordY),
