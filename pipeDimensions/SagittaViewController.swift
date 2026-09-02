@@ -235,7 +235,7 @@ class SagittaViewController: UIViewController {
     private func configureSagittaField() {
         sagittaTextField.placeholder = "e.g 5/16"
         sagittaTextField.borderStyle = .roundedRect
-        sagittaTextField.keyboardType = .decimalPad
+        sagittaTextField.keyboardType = .default  // Allows "/" and space for fractions in inch mode
         sagittaTextField.delegate = self
         sagittaTextField.addTarget(self, action: #selector(inputChanged), for: .editingChanged)
     }
@@ -243,7 +243,7 @@ class SagittaViewController: UIViewController {
     private func configureChordField() {
         chordTextField.placeholder = "e.g 4 1/4"
         chordTextField.borderStyle = .roundedRect
-        chordTextField.keyboardType = .decimalPad
+        chordTextField.keyboardType = .default  // Allows "/" and space for fractions in inch mode
         chordTextField.delegate = self
         chordTextField.addTarget(self, action: #selector(inputChanged), for: .editingChanged)
     }
@@ -389,13 +389,19 @@ class SagittaViewController: UIViewController {
         sagittaLabel.text = "S [\(unitSymbol)]"
         chordLabel.text = "C [\(unitSymbol)]"
         
-        // Update placeholders based on unit mode
+        // Update keyboard types and placeholders based on unit mode
         if currentUnit == .inches {
+            // Inch mode: allow "/" and space for fractions
+            sagittaTextField.keyboardType = .default
+            chordTextField.keyboardType = .default
             sagittaTextField.placeholder = "e.g 5/16"
             chordTextField.placeholder = "e.g 4 1/4"
             sagittaConversionLabel.isHidden = false
             chordConversionLabel.isHidden = false
         } else {
+            // MM mode: numeric only
+            sagittaTextField.keyboardType = .decimalPad
+            chordTextField.keyboardType = .decimalPad
             sagittaTextField.placeholder = "7.9"
             chordTextField.placeholder = "114"
             sagittaConversionLabel.isHidden = true
